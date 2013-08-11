@@ -173,7 +173,7 @@ get_git_info () {
 
 # Symbol displayed at the line of every prompt
 get_prompt_symbol () {
-  echo "➝"
+  echo "➝ "
 }
 
 # Define the sexy-bash-prompt
