@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+
 cd "$(dirname "${BASH_SOURCE}")"
 git pull
 function doIt() {
@@ -15,3 +17,5 @@ else
 fi
 unset doIt
 source ~/.bash_profile
+
+exit 0
