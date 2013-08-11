@@ -150,7 +150,7 @@ function get_git_status() {
   elif [[ $BRANCH_BEHIND == 1 ]]; then
     echo "▽"
   elif [[ $DIRTY_BRANCH == 1 ]]; then
-    echo "*"
+    echo "☆"
   fi
 }
 
@@ -164,7 +164,7 @@ get_git_info () {
     OUTPUT=$BRANCH
 
     # Add on the git status
-    OUTPUT=$OUTPUT"$(get_git_status)"
+    OUTPUT=$OUTPUT" $(get_git_status)"
 
     # Echo our output
     echo $OUTPUT
@@ -173,13 +173,11 @@ get_git_info () {
 
 # Symbol displayed at the line of every prompt
 get_prompt_symbol () {
-  # Some prompts display $ for a non-version control dir, ∓ for git, and § for mercurial
-  # I have chosen to keep it consistent
-  echo "\$"
+  echo "➝"
 }
 
 # Define the sexy-bash-prompt
-PS1="\[${BOLD}${USER_COLOR}\]\u \
+PS1="\[${USER_COLOR}\]\u \
 \[$PREPOSITION_COLOR\]in \
 \[$DIR_COLOR\]\w\
 \[$PREPOSITION_COLOR\]\
