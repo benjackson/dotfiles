@@ -36,4 +36,9 @@ complete -W "NSGlobalDomain" defaults
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall
 
 # If possible, add tab completion for many more commands
-[ -f /etc/bash{_completion ] && source /etc/bash_completion
+[ -f "/etc/bash_completion" ] && source /etc/bash_completion
+
+# If we're on a boxen-controlled machine
+[ -f "/opt/boxen/env.sh" ] && source /opt/boxen/env.sh
+
+echo "how else do I end this with a zero return code?" >/dev/null
